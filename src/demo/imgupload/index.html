@@ -1,0 +1,60 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Hello, Aloha world!</title>
+
+    <link rel="stylesheet" href="index.css" type="text/css">
+
+    <link rel="stylesheet" href="../../css/aloha.css" type="text/css">
+
+    <script src="js/aloha-config.js" language="javascript"></script>
+    <script src="../../lib/aloha.js" data-aloha-plugins="common/format,common/highlighteditables,common/list,
+        common/link,common/undo,common/paste,common/block,common/contenthandler,common/imageholder,common/characterpicker"></script>
+
+	<script type="text/javascript">
+		function remove_node() {
+			if (document.images[0])
+				document.images[0].parentNode.removeChild(document.images[0]);
+		}
+
+		function new_photo() {
+			var img = document.createElement("img");
+			img.src="random-image.png";
+			document.body.appendChild(img);
+		}
+
+        function popupUploadForm() {
+            var newWindow = window.open('uploadform.htm', 'name', 'height=480,width=360');
+        }
+	</script>
+</head>
+<body>
+
+<div id="content">
+<p>
+Etiam non urna urna, quis molestie magna. Vestibulum vel nisi est, a volutpat velit. Nullam eget urna vel dolor iaculis tempor in sed dui. Suspendisse vestibulum, velit id malesuada pretium, lacus dolor dignissim metus, eget dignissim neque tellus eget leo. Suspendisse potenti. In fermentum rhoncus nunc, a convallis sem vehicula id. Morbi ac odio diam. Nullam vel magna sed dui varius tristique. Aliquam lectus lacus, semper sit amet rhoncus a, ultricies eget ante. 
+</p>
+<p>    
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel magna ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec scelerisque felis non massa facilisis in faucibus mi sagittis. Maecenas commodo imperdiet posuere. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi erat sapien, dapibus vel interdum sit amet, tempor sit amet erat. Quisque in diam felis. Duis imperdiet vestibulum lectus adipiscing pharetra. Suspendisse non nisl tellus. Integer nunc dui, mattis sed congue non, posuere eget leo. Donec id massa et nunc volutpat dapibus vitae eget risus.
+</p>
+<p>
+Donec vel justo ac lectus feugiat facilisis a nec libero. Aenean diam quam, gravida ut tempor ut, pretium eu diam. Curabitur pellentesque, augue vitae dictum condimentum, odio enim pretium sem, at laoreet nisl nunc imperdiet enim. Proin pretium congue lacus tristique ultrices. Vivamus nec massa metus. Vestibulum lobortis cursus velit, vitae mattis turpis posuere sit amet. Suspendisse euismod nunc quis lorem condimentum consequat. Integer eget erat quis arcu auctor pulvinar. Sed interdum ligula non nisi gravida accumsan. Sed mauris nibh, varius non laoreet eget, congue nec arcu. Integer eu erat facilisis sapien eleifend congue. Suspendisse eget leo in tortor varius fermentum sed at nisi. Maecenas sollicitudin orci quis velit pretium congue. Morbi ultrices rhoncus leo, sit amet porttitor magna adipiscing sed.
+</p>
+</div>
+    <button id="getContents" type="button">getContents</button>
+
+    <script type="text/javascript">
+    Aloha.ready( function() {
+        var $ = Aloha.jQuery;
+        $('#title').aloha();
+        $('.shorttext').aloha();
+        $('#content').aloha();
+        $('#getContents').click(function(){
+            var e = Aloha.getEditableById('content');
+            alert(e.getContents());
+        });
+    });
+    </script>
+</body>
+</html>
+
